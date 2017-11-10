@@ -7,7 +7,7 @@ float calculateRectMoI (float base, float height), calculateCirMoI(float radius)
 
 int main() {
 	cout << "Welcome to the area moment of inertia calculator by Shane Treadway." << endl;
-	cout << "===================================================================" << endl;
+	cout << "=============================================================================" << endl;
 
 	string repeat = "yes";
 	cout << " " << endl;
