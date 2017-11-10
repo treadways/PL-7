@@ -1,11 +1,39 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 float calculateRectMoI (float base, float height), calculateCirMoI(float radius), calculateTriMoI(float base, float height);
 
 int main() {
+	cout << "Welcome to the area moment of inertia calculator by Shane Treadway." << endl;
+	cout << "===================================================================" << endl;
 
+	string repeat = "yes";
+	cout << " ";
+	while (repeat == "yes") {
+		char shape;
+		string baseR, heightR, baseT, heightT, radiusC;
+
+		cout << "What shape is the beam's cross-section? (r:Rectangle, t:Triangle, c:Circle) : ";
+		cin >> shape;
+		cout << " " << endl;
+
+		char r, t, c;
+
+		switch (shape)  {
+		case 'r' :
+
+			cout << "Please enter the dimentions of you beam: " << endl;
+			cout << " ";
+			cout << "Base: ";
+			cin >> baseR;
+			cout << "Height";
+			cin >> heightR;
+
+			float calculateRectMoI(baseR, heightR);
+		}
+	}
 }
 
 float calculateRectMoI(float base, float height) {
