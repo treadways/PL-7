@@ -23,44 +23,44 @@ int main() {
 
 		case 'r':
 
-			cout << "Please enter the dimensions of you beam: " << endl;
+			cout << "Please enter the dimensions of you beam in mm: " << endl;
 			cout << "Base: ";
 			cin >> baseR;
-			cout << "Height";
+			cout << "Height: ";
 			cin >> heightR;
 
 			rectMoI = calculateRectMoI(baseR, heightR);
 
 			cout << " " << endl;
-			cout << "The area moment of inertia is: " << rectMoI << endl;
+			cout << "The area moment of inertia is: " << rectMoI << "mm" << endl;
 
 			break;
 
 		case 't':
 
-			cout << "Please enter the dimensions of you beam: " << endl;
+			cout << "Please enter the dimensions of you beam in mm: " << endl;
 			cout << "Base: ";
 			cin >> baseT;
-			cout << "Height";
+			cout << "Height: ";
 			cin >> heightT;
 
 			triMoI = calculateTriMoI(baseT, heightT);
 
 			cout << " " << endl;
-			cout << "The area moment of inertia is: " << triMoI << endl;
+			cout << "The area moment of inertia is: " << triMoI << "mm" << endl;
 
 			break;
 
 		case 'c':
 
-			cout << "Please enter the dimensions of you beam: " << endl;
+			cout << "Please enter the dimensions of you beam in mm: " << endl;
 			cout << "Radius: ";
 			cin >> radiusC;
 
-			rectMoI = calculateCirMoI(radiusC);
+			cirMoI = calculateCirMoI(radiusC);
 
 			cout << " " << endl;
-			cout << "The area moment of inertia is: " << cirMoI << endl;
+			cout << "The area moment of inertia is: " << cirMoI << "mm" << endl;
 
 			break;
 		}
@@ -69,7 +69,7 @@ int main() {
 		cout << "Would you like to calculate another moment of inertia? (yes/no): ";
 		cin >> repeat;
 		cout << "=============================================================================" << endl;
-
+		cout << " " << endl;
 	}
 }
 
@@ -82,7 +82,7 @@ float calculateRectMoI(float base, float height) {
 float calculateCirMoI(float radius) {
 	float MoI;
 	float PI = 3.1415926;
-	MoI = PI * radius * radius * radius * radius / 4;
+	MoI = radius * radius * radius * radius * PI / 4;
 	return MoI;
 }
 
