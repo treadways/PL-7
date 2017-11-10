@@ -13,7 +13,7 @@ int main() {
 	cout << " ";
 	while (repeat == "yes") {
 		char shape;
-		string baseR, heightR, baseT, heightT, radiusC;
+		float baseR, heightR, baseT, heightT, radiusC, rectMoI, cirMoI, triMoI;
 
 		cout << "What shape is the beam's cross-section? (r:Rectangle, t:Triangle, c:Circle) : ";
 		cin >> shape;
@@ -22,7 +22,7 @@ int main() {
 		char r, t, c;
 
 		switch (shape)  {
-		case 'r' :
+		case 'r':
 
 			cout << "Please enter the dimentions of you beam: " << endl;
 			cout << " ";
@@ -31,7 +31,15 @@ int main() {
 			cout << "Height";
 			cin >> heightR;
 
-			float calculateRectMoI(baseR, heightR);
+			rectMoI = calculateRectMoI(baseR, heightR);
+
+			cout << "The moment of inertia is: " << rectMoI << endl;
+
+			cout << "Would you like to calculate another moment of inertia? (yes/no): ";
+			cin >> repeat;
+
+			break;
+
 		}
 	}
 }
